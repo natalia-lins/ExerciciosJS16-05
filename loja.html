@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+</head>
+<body>
+    <p>Informe o preço do produto: </p>
+    <input type="number" placeholder="Digite o valor" id="valor">
+    
+    <p>Opções de pagamento: </p>
+    <form>
+        <input type="radio" name="opcao" value="a-vista"><label for="a-vista">À Vista com 10% de desconto</label><br>
+        <input type="radio" name="opcao" value="parcelado"><label for="parcelado">Parcelado em 3x sem juros</label><br>
+    </form>
+    <br>
+    <button onclick="calcularTotal()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+     
+        function calcularTotal(){
+            const valor = parseFloat(document.getElementById('valor').value);
+            const opcaoSelecionada = document.querySelector('input[name="opcao"]:checked');
+            const resultado = document.getElementById('resultado');
+
+            
+            if (opcaoSelecionada.value === "a-vista"){
+                const total = valor - (0.1*valor);
+                resultado.innerHTML = "Total à vista: R$" + total.toFixed(2);
+            }
+            else if (opcaoSelecionada.value === "parcelado"){
+                const parcela = valor/3;
+                resultado.innerHTML = "Total parcelado: R$ " + valor.toFixed(2) + "<br>" +
+                    "Valor das parcelas: R$ " + parcela.toFixed(2);
+            }
+        }
+    </script>
+
+</body>
+</html>
