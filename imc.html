@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let peso = parseFloat(prompt("Digite seu peso"));
+        let altura = parseFloat(prompt("Digite sua altura"));
+
+        let imc = peso/(altura*altura); 
+        alert("Seu peso: " + peso)
+        alert("Sua altura: " + altura)
+
+        if(imc<17){
+            alert("Muito abaixo do peso | seu IMC: " + imc.toFixed(2));
+        }
+        else if (imc<18.5){
+            alert("Abaixo do peso | seu IMC: " + imc.toFixed(2));
+        }
+        else if (imc<25){
+            alert("Peso ideal | seu IMC: " + imc.toFixed(2));
+        }
+        else if (imc<30){
+            alert("Acima do peso | seu IMC: " + imc.toFixed(2));
+        }
+        else if (imc<35){
+            alert("Obesidade 1 | seu IMC: " + imc.toFixed(2));
+        }
+        else if (imc<40){
+            alert("Obesidade 2 (severa) | seu IMC: " + imc.toFixed(2));
+        }
+        else{
+            alert("Obesidade 3 (mórbida) | seu IMC: " + imc.toFixed(2));
+        }
+
+    </script>
+</body>
+</html>
